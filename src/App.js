@@ -5,8 +5,9 @@ function App() {
   let [members, setMembers] = useState([]);
   let [isloading, SetIsloading] = useState(true);
 
+  //function to find  mebers liked by member name
   function findAndSetMembersdata(member, loacalArray) {
-    let a = loacalArray.find((element) => {
+    let user = loacalArray.find((element) => {
       if (element["name"] === member["name"]) {
         return element;
       } else {
@@ -14,9 +15,10 @@ function App() {
       }
     });
 
-    return a?.likes ? a.likes : 0;
+    return user?.likes ? user.likes : 0;
   }
 
+  // function to merge likes data from  local storage to api members data
   function MergeLocaldatatoApiData(loacalArray, apiArray) {
     let persitedArr = apiArray.map((member, index) => {
       return {
@@ -53,6 +55,7 @@ function App() {
     setMembers(datatostore);
   };
 
+  // event listener for synk in likes
   useEffect(() => {
     setMembers(getLocatdata() || []);
 
@@ -70,7 +73,7 @@ function App() {
       });
     };
   }, []);
-
+  // to fetch data from api
   useEffect(() => {
     fetch("https://coding-assignment.g2crowd.com")
       .then((response) => response.json())
@@ -102,7 +105,7 @@ function App() {
       })
       .catch(async (error) => {
         console.log(error, "err");
-
+        // to reload window if api is not working or not reachable
         var st = setTimeout(() => {
           window.location.reload();
           clearTimeout(st);
@@ -114,7 +117,7 @@ function App() {
   }, []);
 
   return (
-    <div className="p-2 ">
+    <div className="p-3 ">
       <div className="w-full m-auto ">
         <div className="container w-full max-w-5xl mx-auto my-4 divide-y lg:my-10 ">
           <div className="w-full mb-3 text-2xl font-light lg:text-4xl text-orage">
@@ -125,6 +128,7 @@ function App() {
               {[1, 1, 1, 1, 1, 1].map((loader, index) => {
                 return (
                   <div>
+                    {/* loading screen */}
                     <div
                       id={index}
                       className="flex items-start w-full py-4 space-x-4 animate-pulse md:items-center text-gray"
@@ -139,7 +143,6 @@ function App() {
                         <div className="hidden w-full p-1 bg-gray-200 md:flex md:p-2" />
                         <div className="w-10/12 p-1 bg-gray-200 md:p-2" />
                         <div className="w-8/12 p-1 bg-gray-200 md:p-2" />
-                        <div className="w-20 p-1 bg-gray-200 md:w-60"></div>
                         <div className="p-1.5 bg-gray-200 w-60 hidden md:flex" />
                       </div>
                     </div>
@@ -152,6 +155,7 @@ function App() {
               {members &&
                 members.map((list, index) => (
                   <>
+                    {/* cards */}
                     <div>
                       <div
                         id={index}
