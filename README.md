@@ -1,3 +1,28 @@
+# to run app enter following commands in root folder
+
+# yarn install or Npm install
+
+# yarn start or npm start
+
+in case any help need to setup ping me @ what'sapp 9094290846 or reach me at rajmohan6268@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

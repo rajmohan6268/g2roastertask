@@ -55,7 +55,7 @@ function App() {
     setMembers(datatostore);
   };
 
-  // event listener for synk in likes
+  // event listener for synk in likes count accross all tabs
   useEffect(() => {
     setMembers(getLocatdata() || []);
 
