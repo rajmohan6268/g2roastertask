@@ -11,6 +11,10 @@ in case any help need to setup ping me @ what'sapp 9094290846 or reach me at raj
 
 
 
+#build docker build -f Dockerfile.prod -t my-first-image:latest .
+
+#run  docker run -it -p 80:80 --rm my-first-image:latest
+
 
 
 
