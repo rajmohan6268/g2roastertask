@@ -9,11 +9,12 @@ in case any help need to setup ping me @ what'sapp 9094290846 or reach me at raj
 
 
 
+# To run in Docker container follow build and run commands 
 
 
-#build docker build -f Dockerfile.prod -t my-first-image:latest .
+#build docker build -f Dockerfile.prod -t g2roastertask:latest .
 
-#run  docker run -it -p 80:80 --rm my-first-image:latest
+#run  docker run -it -p 3000:80 --rm g2roastertask:latest
 
 
 
